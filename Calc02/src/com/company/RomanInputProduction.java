@@ -17,45 +17,55 @@ public class RomanInputProduction {
     //Roman rom;
 
     int RomanToInt() {
-        switch (PartInput) {
-            case "I":
-                fs = Roman.I.toInt();
-                break;
-            case "II":
-                fs = Roman.II.toInt();
-                break;
-            case "III":
-                fs = Roman.III.toInt();
-                break;
-            case "IV":
-                fs = Roman.IV.toInt();
-                break;
-            case "V":
-                fs = Roman.V.toInt();
-                break;
-            case "VI":
-                fs = Roman.VI.toInt();
-                break;
-            case "VII":
-                fs = Roman.VII.toInt();
-                break;
-            case "VIII":
-                fs = Roman.VIII.toInt();
-                break;
-            case "IX":
-                fs = Roman.IX.toInt();
-                break;
-            case "X":
-                fs = Roman.X.toInt();
-                break;
+            switch (PartInput) {
+                case "I":
+                    fs = Roman.I.toInt();
+                    break;
+                case "II":
+                    fs = Roman.II.toInt();
+                    break;
+                case "III":
+                    fs = Roman.III.toInt();
+                    break;
+                case "IV":
+                    fs = Roman.IV.toInt();
+                    break;
+                case "V":
+                    fs = Roman.V.toInt();
+                    break;
+                case "VI":
+                    fs = Roman.VI.toInt();
+                    break;
+                case "VII":
+                    fs = Roman.VII.toInt();
+                    break;
+                case "VIII":
+                    fs = Roman.VIII.toInt();
+                    break;
+                case "IX":
+                    fs = Roman.IX.toInt();
+                    break;
+                case "X":
+                    fs = Roman.X.toInt();
+                    break;
+                case "0":
+                    fs = 0;
+                    break;
+                default:
 
-        }
+                    try {
+                        throw new Exception("Roman must be <= X");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+            }
         return fs;
     }
 
 
     String ToRomanCh2() {
         switch (chR2) {
+
             case '1':
                 f2 = "I";
                 break;
@@ -83,6 +93,10 @@ public class RomanInputProduction {
             case '9':
                 f2 = "IX";
                 break;
+            case '0':
+                f2 = "0";
+                break;
+
 
         }
         return f2;
@@ -160,9 +174,6 @@ public class RomanInputProduction {
         f = fs;
 
             //System.out.println(f);
-            if (f > 10) System.out.println("must be <= 10");
-
-
 
         String SubInputRigth = Input.substring(AriphIndex+1);
         SubInputRigth = SubInputRigth.toUpperCase();
@@ -209,11 +220,11 @@ try {
 
 
 
-
-        if (R<0) {
+         if (R<0) {
             len = len +1;
              min = '-';}
-        else {len = 1;
+
+             else {len = 1;
               min = ' ';
         }
 
